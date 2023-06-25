@@ -11,10 +11,6 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 
 registerLocale("id", id);
 
-export const metadata: Metadata = {
-  title: "Buat Vote",
-};
-
 export default function CreateVote() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
