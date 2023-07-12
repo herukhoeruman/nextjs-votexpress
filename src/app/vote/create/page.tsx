@@ -8,6 +8,7 @@ import id from "date-fns/locale/id";
 import "react-datepicker/dist/react-datepicker.css";
 import CandidateForm from "@/components/candidate";
 import { PlusIcon } from "@heroicons/react/24/outline";
+import Button from "@/components/button";
 
 registerLocale("id", id);
 
@@ -44,7 +45,13 @@ export default function CreateVote() {
 
   return (
     <div className="flex flex-col">
-      <Image src={"/img/img-2.svg"} alt="Create" width={300} height={300} />
+      <Image
+        src={"/img/img-2.svg"}
+        alt="Create"
+        width={300}
+        height={300}
+        className="place-self-end"
+      />
       <span className="text-4xl font-bold">Buat Voting Baru</span>
       <span className="text-zinc-700 mt-3">Silahkan inputkan data voting</span>
 
@@ -104,6 +111,9 @@ export default function CreateVote() {
           >
             <PlusIcon className="w-1/2" />
           </div>
+        </div>
+        <div className="text-right mt-10">
+          <Button text="Buat Voting" />
         </div>
       </form>
       {JSON.stringify(candidates)}

@@ -1,9 +1,12 @@
+"use client";
 import Button from "@/components/button";
 import Image from "next/image";
 import { LinkIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div>
       <div className="flex flex-col place-items-center py-20 space-y-3">
@@ -18,8 +21,15 @@ export default function Home() {
           height={300}
         />
         <div className="space-x-10">
-          <Button text="Buat Vote Baru" />
-          <Button text="Ikutan Vote" type="secondary" />
+          <Button
+            text="Buat Vote Baru"
+            onClick={() => router.push("/vote/create")}
+          />
+          <Button
+            text="Ikutan Vote"
+            type="secondary"
+            onClick={() => router.push("/participant")}
+          />
         </div>
       </div>
 
